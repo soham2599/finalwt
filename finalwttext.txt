@@ -1,0 +1,758 @@
+<html>
+<head>
+<title>EventHub</title>
+<style>
+
+body
+{
+    margin: 0;
+    font-family: Arial;
+    background-color: #f4f4ff;
+}
+.navbar
+{
+    background-color: #10184a;
+    padding: 15px;
+    color: white;
+}
+
+.logo
+{
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.navbar button
+{
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.page
+{
+    display: none;
+    padding: 30px;
+}
+
+#home
+{
+    display: block;
+}
+
+.hero
+{
+    height: 400px;
+    background-image: url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=80");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1
+{
+    font-size: 45px;
+}
+
+.button
+{
+    background-color: #673de6;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.center
+{
+    text-align: center;
+}
+
+.events
+{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    background-color: white;
+    width: 280px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px gray;
+}
+
+.card img
+{
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.price
+{
+    color: #e32668;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.formbox
+{
+    background-color: white;
+    width: 600px;
+    max-width: 90%;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px gray;
+}
+
+input
+{
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.details
+{
+    background-color: #eeeeff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.success
+{
+    background-color: white;
+    text-align: center;
+    width: 500px;
+    max-width: 90%;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px gray;
+}
+
+.check
+{
+    color: green;
+    font-size: 60px;
+}
+
+.ticket
+{
+    background-color: white;
+    width: 650px;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px;
+    border: 2px dashed #673de6;
+    border-radius: 10px;
+}
+
+.ticket img
+{
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.status
+{
+    color: green;
+    font-weight: bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<span class="logo">💎 EventHub</span>
+
+<button onclick="showHome()">Home</button>
+
+<button onclick="showEvents()">Events</button>
+
+<button onclick="showBooking()">Book Now</button>
+
+<button onclick="showPayment()">Payment</button>
+
+<button onclick="showMyBooking()">My Booking</button>
+
+</div>
+
+
+<!-- HOME PAGE -->
+
+<div id="home" class="page">
+
+<div class="hero">
+
+<div>
+
+<h1>Welcome to EventHub</h1>
+
+<p>Book your favourite events easily</p>
+
+<button class="button" onclick="showEvents()">
+Explore Events
+</button>
+
+</div>
+
+</div>
+
+<br>
+
+<div class="events">
+
+<div class="card">
+<h2>🎵 Music</h2>
+<p>Enjoy amazing live music events.</p>
+</div>
+
+<div class="card">
+<h2>🎤 Live Shows</h2>
+<p>Experience exciting live performances.</p>
+</div>
+
+<div class="card">
+<h2>😂 Comedy</h2>
+<p>Enjoy comedy nights with friends.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EVENTS PAGE -->
+
+<div id="events" class="page">
+
+<h1 class="center">Upcoming Events</h1>
+
+<br>
+
+<div class="events">
+
+<!-- MUSIC FEST -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80">
+
+<h2>Music Fest</h2>
+
+<p>📅 30 Sept 2026</p>
+
+<p>📍 Pune, Maharashtra</p>
+
+<p class="price">₹499</p>
+
+<button class="button" onclick="selectMusic()">
+Book Now
+</button>
+
+</div>
+
+
+<!-- LIVE SHOW -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80">
+
+<h2>Live Show</h2>
+
+<p>📅 05 Oct 2026</p>
+
+<p>📍 Pune, Maharashtra</p>
+
+<p class="price">₹699</p>
+
+<button class="button" onclick="selectLive()">
+Book Now
+</button>
+
+</div>
+
+
+<!-- COMEDY -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=600&q=80">
+
+<h2>Comedy Night</h2>
+
+<p>📅 10 Oct 2026</p>
+
+<p>📍 Pune, Maharashtra</p>
+
+<p class="price">₹399</p>
+
+<button class="button" onclick="selectComedy()">
+Book Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BOOKING PAGE -->
+
+<div id="booking" class="page">
+
+<div class="formbox">
+
+<h1>🎟️ Book Your Ticket</h1>
+
+<div class="details">
+
+<h2 id="bookingEvent">Select Event</h2>
+
+<p id="bookingDate"></p>
+
+<p id="bookingLocation"></p>
+
+<p>
+Price: ₹<span id="bookingPrice"></span>
+</p>
+
+</div>
+
+
+<label>Name</label>
+
+<input type="text" id="name" placeholder="Enter your name">
+
+
+<label>Mobile Number</label>
+
+<input type="text" id="mobile" placeholder="Enter mobile number">
+
+
+<label>Number of Tickets</label>
+
+<input type="number" id="tickets" min="1" max="10" value="1">
+
+
+<br>
+
+<button class="button" onclick="confirmBooking()">
+Continue to Payment
+</button>
+
+</div>
+
+</div>
+
+
+<!-- PAYMENT PAGE -->
+
+<div id="payment" class="page">
+
+<div class="formbox">
+
+<h1>💳 Payment</h1>
+
+<div class="details">
+
+<p>
+<b>Name:</b>
+<span id="paymentName"></span>
+</p>
+
+<p>
+<b>Event:</b>
+<span id="paymentEvent"></span>
+</p>
+
+<p>
+<b>Date:</b>
+<span id="paymentDate"></span>
+</p>
+
+<p>
+<b>Tickets:</b>
+<span id="paymentTickets"></span>
+</p>
+
+<p>
+<b>Price:</b>
+₹<span id="paymentPrice"></span>
+</p>
+
+<p>
+<b>Total Amount:</b>
+₹<span id="paymentTotal"></span>
+</p>
+
+</div>
+
+
+<h3>Select Payment Method</h3>
+
+<input type="radio" name="payment" value="UPI">
+UPI
+
+<br>
+
+<input type="radio" name="payment" value="Card">
+Card
+
+<br>
+
+<input type="radio" name="payment" value="Cash">
+Cash
+
+<br><br>
+
+<button class="button" onclick="makePayment()">
+Pay Now
+</button>
+
+</div>
+
+</div>
+
+
+<!-- SUCCESS PAGE -->
+
+<div id="success" class="page">
+
+<div class="success">
+
+<div class="check">✓</div>
+
+<h1>Payment Successful!</h1>
+
+<p>Your booking has been confirmed.</p>
+
+<h3>Booking ID</h3>
+
+<h2>EH1001</h2>
+
+<br>
+
+<button class="button" onclick="showMyBooking()">
+View My Booking
+</button>
+
+<button class="button" onclick="showHome()">
+Go Home
+</button>
+
+</div>
+
+</div>
+
+
+<!-- MY BOOKING PAGE -->
+
+<div id="mybooking" class="page">
+
+<h1 class="center">🎟️ My Booking</h1>
+
+<br>
+
+<div class="ticket">
+
+<img id="myImage">
+
+<h2 id="myEvent"></h2>
+
+<p>
+📅 <span id="myDate"></span>
+</p>
+
+<p>
+📍 <span id="myLocation"></span>
+</p>
+
+<hr>
+
+<p>
+<b>Name:</b>
+<span id="myName"></span>
+</p>
+
+<p>
+<b>Mobile:</b>
+<span id="myMobile"></span>
+</p>
+
+<p>
+<b>Tickets:</b>
+<span id="myTickets"></span>
+</p>
+
+<p>
+<b>Total Amount:</b>
+₹<span id="myTotal"></span>
+</p>
+
+<p class="status">
+✓ Booking Confirmed
+</p>
+
+<h3>Booking ID: EH1001</h3>
+
+</div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function hidePages()
+{
+    document.getElementById("home").style.display = "none";
+    document.getElementById("events").style.display = "none";
+    document.getElementById("booking").style.display = "none";
+    document.getElementById("payment").style.display = "none";
+    document.getElementById("success").style.display = "none";
+    document.getElementById("mybooking").style.display = "none";
+}
+
+
+function showHome()
+{
+    hidePages();
+
+    document.getElementById("home").style.display = "block";
+}
+
+
+function showEvents()
+{
+    hidePages();
+
+    document.getElementById("events").style.display = "block";
+}
+
+
+function showBooking()
+{
+    hidePages();
+
+    document.getElementById("booking").style.display = "block";
+}
+
+
+function showPayment()
+{
+    hidePages();
+
+    document.getElementById("payment").style.display = "block";
+}
+
+
+function showMyBooking()
+{
+    hidePages();
+
+    document.getElementById("mybooking").style.display = "block";
+}
+
+
+function selectMusic()
+{
+    document.getElementById("bookingEvent").innerHTML = "Music Fest";
+
+    document.getElementById("bookingDate").innerHTML =
+    "📅 30 Sept 2026";
+
+    document.getElementById("bookingLocation").innerHTML =
+    "📍 Pune, Maharashtra";
+
+    document.getElementById("bookingPrice").innerHTML =
+    "499";
+
+    showBooking();
+}
+
+
+function selectLive()
+{
+    document.getElementById("bookingEvent").innerHTML = "Live Show";
+
+    document.getElementById("bookingDate").innerHTML =
+    "📅 05 Oct 2026";
+
+    document.getElementById("bookingLocation").innerHTML =
+    "📍 Pune, Maharashtra";
+
+    document.getElementById("bookingPrice").innerHTML =
+    "699";
+
+    showBooking();
+}
+
+
+function selectComedy()
+{
+    document.getElementById("bookingEvent").innerHTML =
+    "Comedy Night";
+
+    document.getElementById("bookingDate").innerHTML =
+    "📅 10 Oct 2026";
+
+    document.getElementById("bookingLocation").innerHTML =
+    "📍 Pune, Maharashtra";
+
+    document.getElementById("bookingPrice").innerHTML =
+    "399";
+
+    showBooking();
+}
+
+
+function confirmBooking()
+{
+    var name =
+    document.getElementById("name").value;
+
+    var mobile =
+    document.getElementById("mobile").value;
+
+    var tickets =
+    document.getElementById("tickets").value;
+
+
+    if(name == "" || mobile == "")
+    {
+        alert("Please enter all details");
+    }
+
+    else
+    {
+        var event =
+        document.getElementById("bookingEvent").innerHTML;
+
+        var date =
+        document.getElementById("bookingDate").innerHTML;
+
+        var price =
+        document.getElementById("bookingPrice").innerHTML;
+
+        var location =
+        document.getElementById("bookingLocation").innerHTML;
+
+
+        var total = price * tickets;
+
+
+        /* PAYMENT DETAILS */
+
+        document.getElementById("paymentName").innerHTML =
+        name;
+
+        document.getElementById("paymentEvent").innerHTML =
+        event;
+
+        document.getElementById("paymentDate").innerHTML =
+        date;
+
+        document.getElementById("paymentTickets").innerHTML =
+        tickets;
+
+        document.getElementById("paymentPrice").innerHTML =
+        price;
+
+        document.getElementById("paymentTotal").innerHTML =
+        total;
+
+
+        /* MY BOOKING DETAILS */
+
+        document.getElementById("myName").innerHTML =
+        name;
+
+        document.getElementById("myMobile").innerHTML =
+        mobile;
+
+        document.getElementById("myEvent").innerHTML =
+        event;
+
+        document.getElementById("myDate").innerHTML =
+        date;
+
+        document.getElementById("myLocation").innerHTML =
+        location;
+
+        document.getElementById("myTickets").innerHTML =
+        tickets;
+
+        document.getElementById("myTotal").innerHTML =
+        total;
+
+
+        /* EVENT IMAGE */
+
+        if(event == "Music Fest")
+        {
+            document.getElementById("myImage").src =
+            "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=600&q=80";
+        }
+
+        else if(event == "Live Show")
+        {
+            document.getElementById("myImage").src =
+            "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=80";
+        }
+
+        else
+        {
+            document.getElementById("myImage").src =
+            "https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=600&q=80";
+        }
+
+
+        showPayment();
+    }
+}
+
+
+function makePayment()
+{
+    alert("Payment Successful!");
+
+    hidePages();
+
+    document.getElementById("success").style.display =
+    "block";
+}
+
+</script>
+
+</body>
+</html>
